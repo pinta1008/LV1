@@ -1,24 +1,12 @@
-let form=document.getElementById("formSubmission");
-
-let table=document.getElementById('data');
-form.addEventListener("submit",(e)=>{
-  e.preventDefault();
-  submit();
-})
-
-
-const submit=()=>{
-  let Ime = document.getElementById("Ime").value;
-    let Godina = document.getElementById("Godina").value;
-    let ECTS = document.getElementById("ECTS").value;
-
-
-  let newArray = [Ime,Godina,ECTS];
-  newArray.forEach((item)=>{
-      var li = document.createElement("li");
-  var text = document.createTextNode(item);
-  li.appendChild(text);
-  table.appendChild(li);
-  })
-  form.reset(); 
+function Neka()
+{
+  var predmet = $('#input1').val();
+  var godina = $('#input2').val();
+  var ects = $('#input3').val();
+  var podadatak = "<tr><td>"+ predmet + "</td><td>"+ godina + "</td><td>"+ ects + "</td><td><button id="+"btn1"+">BRISI</button></td></tr>"
+  $("#tabla").append(podadatak);
 }
+$("#tabla").on("click","#btn1",function()
+{
+  $(this).closest("tr").remove();
+});
