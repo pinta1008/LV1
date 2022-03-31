@@ -12,30 +12,30 @@ $("#tabla").on("click","#btn1", function(){
 $("#tabla").on("change","#btn2", function(){
   if($(this).is(":checked"))
   {
-      $(this).closest("tr").css("background-color","lightgreen");
+      $(this).closest("tr").css("background-color","red");
   }
   else
   {
-      $(this).closest("tr").css("background-color","pink");
+      $(this).closest("tr").css("background-color","yellow");
   }
 
 });
 
 $('#input4').on('keyup', function() {
   var value = $(this).val();
-  var bilokaj = new RegExp(value, "i");
+  var nekaj = new RegExp(value, "i");
 
   $('#tabla').find('tr').each(function() 
   {
-      if(($(this).find('td#predmetid').text().search(bilokaj) >= 0))
+      if(($(this).find('td#predmetid').text().search(nekaj) >= 0))
       {
           $(this).show();
       }
-      else if(($(this).find('td#godinaid').text().search(bilokaj) >= 0))
+      else if(($(this).find('td#godinaid').text().search(nekaj) >= 0))
       {
           $(this).show();
       }
-      else if(($(this).find('td#ectsid').text().search(bilokaj) >= 0))
+      else if(($(this).find('td#ectsid').text().search(nekaj) >= 0))
       {
           $(this).show();
       }
